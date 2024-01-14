@@ -4,7 +4,7 @@
 /**/
 
 /* 
-Ce projet a ete developpe par Hilarion  @ LI LI 
+Ce projet a ete developpe par denis
  J'ai passe je crois 6 Jours a le concevoir 
  Ce qui m'a inspire c'est que je voulais comment ca marchait la commande eval() en
  Python et Javascript , mais c'etait aussi pour le fun bien sur;
@@ -18,7 +18,7 @@ Ce qui etonnant c la quantite de code qu'il m'a fallu .
 
 
 
-int lelen(char*text){// Pour determiner la longeur d'une chaine
+int length(char*text){// Pour determiner la longeur d'une chaine
 	int i = 0;
 	char*pointe = text;
 	for (i;*pointe != '\0'; ++i){
@@ -30,7 +30,7 @@ int lelen(char*text){// Pour determiner la longeur d'une chaine
 
 int intString(char*z){ // pour convertir un chaine en entier
 	char*zz = z;
-	int len  = lelen(z);
+	int len  = length(z);
 	int res = 0;
 	int prim;
 	int w;
@@ -48,7 +48,7 @@ int intString(char*z){ // pour convertir un chaine en entier
 }
 
 char* reverse(char*a){// inverser une chaine de caractere
-	int la = lelen(a);
+	int la = length(a);
 	char*pa = a;
 	char*res = (void*)malloc((la+1)*sizeof(char));
 	char*sres = res;
@@ -107,7 +107,7 @@ char* Stringy(int n){// pour convertir un entier en chaine de caractere
 }
 
 char* fusesc(char*a,char b){// pour fusionner une chaine avec un char
-	int la = lelen(a);
+	int la = length(a);
 	char*aa = a;
 	char*res = (void*)malloc((la + 2)*sizeof(char));
 	char*sres = res;
@@ -121,8 +121,8 @@ char* fusesc(char*a,char b){// pour fusionner une chaine avec un char
 }
 
 char* fuses(char*a,char*b){// pour fusionner une chaine avec une chaine
-	int la = lelen(a);
-	int lb = lelen(b);
+	int la = length(a);
+	int lb = length(b);
 	char*aa = a;
 	char*bb = b;
 	char*res = (void*)malloc((la + lb + 1)*sizeof(char));
@@ -176,7 +176,7 @@ char* ExtractAlpha(char*para){// Exemple 4+5*8 on evite de selectionner "4+5"
 
 char* ExtractDelta(char*para){// Exemple 4+5*8 on evite de selectionner "4+5"
 	char*pointe = para;
-	pointe += lelen(para) - 1;
+	pointe += length(para) - 1;
 	char*tempo = "";
 	while(*pointe != '\0'){
 		if (*pointe == '+' || *pointe == '-' || *pointe == '*' || *pointe == '/'){
@@ -327,7 +327,7 @@ int isEqual(char*a,char*b){
 
 	int verite = 1;
 
-	for (int i = 0; i < lelen(a); ++i){
+	for (int i = 0; i < length(a); ++i){
 		if (*pa != *pb){
 			verite = 0;
 			break;
